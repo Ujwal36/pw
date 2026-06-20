@@ -22,7 +22,6 @@ public class ApiDemo {
 
         RestAssured.baseURI = "https://qtrip-backend.labs.crio.do";
         RestAssured.basePath = "/api/v1/cities";
-
         Response resp = RestAssured.given().when().get();
          log.info("respnse status code is: " +resp.getStatusCode());
 

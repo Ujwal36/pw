@@ -25,8 +25,10 @@ public class TestDemo {
 
        ChromeOptions options = new ChromeOptions();
 
+      // WebDriver driver = new ChromeDriver(); // Run on local machine by opening chrome tabs 
+
         WebDriver driver = new RemoteWebDriver(
-                new URL("http://host.docker.internal:4444"),
+                new URL("http://localhost:4444"),
                 options
         );
         //http://host.docker.internal:4444
