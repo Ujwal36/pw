@@ -15,9 +15,10 @@ import org.testng.annotations.Test;
 public class TestDemo {
 
     //Annotation --> Testng
-    @Test(dataProvider = "qtripregister", dataProviderClass = DP.class)
+//    @Test(dataProvider = "qtripregister", dataProviderClass = DP.class)
+    @Test
 
-    public static void testcase01(String UserName, String Password) throws  java.lang.InterruptedException, MalformedURLException {
+    public static void testcase01() throws  java.lang.InterruptedException, MalformedURLException {
         
         // Launch browser (Selenium 4.25.0 automatically manages the driver behind the scenes!)
        // WebDriver driver = new ChromeDriver();
@@ -28,17 +29,19 @@ public class TestDemo {
                 new URL("http://localhost:4444"),
                 options
         );
-        
+        //http://host.docker.internal:4444
         
         // Open website
         driver.get("https://qtripdynamic-qa-frontend.vercel.app/pages/register/");
-        System.out.println(UserName + " " + Password);
+       // System.out.println(UserName + " " + Password);
 
 
         Thread.sleep(1000);
 
-        String username = UserName + UUID.randomUUID();
+        String username = "ujwalk@crio.com" + UUID.randomUUID();
         driver.findElement(By.id("floatingInput")).sendKeys(username);
+
+        String Password =  UUID.randomUUID().toString();
 
 
         driver.findElement(By.id("floatingPassword")).sendKeys(Password);
